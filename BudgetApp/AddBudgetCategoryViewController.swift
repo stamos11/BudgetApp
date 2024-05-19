@@ -12,6 +12,12 @@ import CoreData
 class AddBudgetCategoryViewController: UIViewController {
     
     private var persistentContainer: NSPersistentContainer
+    private var isFormValid: Bool {
+        guard let name = nameTextField.text, let amount = amountTextField.text else {
+            return false
+        }
+         return !name.isEmpty && !amount.isEmpty && amount.isNumeric && amount.isGreaterThan(0)
+    }
     lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Budget name"
@@ -62,7 +68,11 @@ class AddBudgetCategoryViewController: UIViewController {
     }
     
     @objc func addBudgetButtonPressed(_ sender: UIButton) {
-        
+        if isFormValid {
+            
+        } else {
+            errorMessageLabel.text = "Unable to save budget. Budget name amount is required"
+        }
     }
     private func setupUI() {
         
