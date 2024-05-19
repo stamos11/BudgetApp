@@ -9,17 +9,19 @@
 /* Begin PBXBuildFile section */
 		3EF7B21A2BFAB37200F1466C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7B2192BFAB37200F1466C /* AppDelegate.swift */; };
 		3EF7B21C2BFAB37200F1466C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7B21B2BFAB37200F1466C /* SceneDelegate.swift */; };
-		3EF7B21E2BFAB37200F1466C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7B21D2BFAB37200F1466C /* ViewController.swift */; };
+		3EF7B21E2BFAB37200F1466C /* BudgetCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7B21D2BFAB37200F1466C /* BudgetCategoriesTableViewController.swift */; };
 		3EF7B2232BFAB37500F1466C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7B2222BFAB37500F1466C /* Assets.xcassets */; };
+		3EF7B22F2BFAB98200F1466C /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7B22D2BFAB98200F1466C /* BudgetModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3EF7B2162BFAB37200F1466C /* BudgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EF7B2192BFAB37200F1466C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EF7B21B2BFAB37200F1466C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3EF7B21D2BFAB37200F1466C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EF7B21D2BFAB37200F1466C /* BudgetCategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		3EF7B2222BFAB37500F1466C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EF7B2272BFAB37500F1466C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EF7B22E2BFAB98200F1466C /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +56,10 @@
 			children = (
 				3EF7B2192BFAB37200F1466C /* AppDelegate.swift */,
 				3EF7B21B2BFAB37200F1466C /* SceneDelegate.swift */,
-				3EF7B21D2BFAB37200F1466C /* ViewController.swift */,
+				3EF7B21D2BFAB37200F1466C /* BudgetCategoriesTableViewController.swift */,
 				3EF7B2222BFAB37500F1466C /* Assets.xcassets */,
 				3EF7B2272BFAB37500F1466C /* Info.plist */,
+				3EF7B22D2BFAB98200F1466C /* BudgetModel.xcdatamodeld */,
 			);
 			path = BudgetApp;
 			sourceTree = "<group>";
@@ -130,7 +133,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EF7B21E2BFAB37200F1466C /* ViewController.swift in Sources */,
+				3EF7B22F2BFAB98200F1466C /* BudgetModel.xcdatamodeld in Sources */,
+				3EF7B21E2BFAB37200F1466C /* BudgetCategoriesTableViewController.swift in Sources */,
 				3EF7B21A2BFAB37200F1466C /* AppDelegate.swift in Sources */,
 				3EF7B21C2BFAB37200F1466C /* SceneDelegate.swift in Sources */,
 			);
@@ -332,6 +336,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3EF7B22D2BFAB98200F1466C /* BudgetModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3EF7B22E2BFAB98200F1466C /* BudgetModel.xcdatamodel */,
+			);
+			currentVersion = 3EF7B22E2BFAB98200F1466C /* BudgetModel.xcdatamodel */;
+			name = BudgetModel.xcdatamodeld;
+			path = /Users/stamoulisnikolaos/Desktop/BudgetApp/BudgetApp/BudgetModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3EF7B20E2BFAB37200F1466C /* Project object */;
 }
