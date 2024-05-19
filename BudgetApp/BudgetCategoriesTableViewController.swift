@@ -24,9 +24,19 @@ class BudgetCategoriesTableViewController: UIViewController {
     //MARK: -Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
     }
-
-
+    
+    @objc func showAddBudgetCategory(_ sender: UIBarButtonItem) {
+        let navController = UINavigationController(rootViewController: AddBudgetCategoryViewController(persistentContainer: persistentContainer))
+        present(navController, animated: true)
+    }
+    private func setupUI() {
+        
+        let addBudgetcategoryButton = UIBarButtonItem(title: "Add category", style: .done, target: self, action: #selector(showAddBudgetCategory))
+        self.navigationItem.rightBarButtonItem = addBudgetcategoryButton
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Budget"
+    }
 }
 
