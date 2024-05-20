@@ -69,9 +69,24 @@ class AddBudgetCategoryViewController: UIViewController {
     
     @objc func addBudgetButtonPressed(_ sender: UIButton) {
         if isFormValid {
-            
+            //Save Budget
+            saveBudgetCategory()
         } else {
             errorMessageLabel.text = "Unable to save budget. Budget name amount is required"
+        }
+    }
+    private func saveBudgetCategory() {
+        guard let name = nameTextField.text, let amount = amountTextField.text else {
+            return
+        }
+        do {
+            let budgerCategory = BudgetCategory(context: persistentContainer.viewContext)
+            budgerCategory.name = name
+            budgerCategory.amount = Double(amount) ?? 0.0
+            try persistentContainer.viewContext.save()
+            dismiss(animated: true)
+        } catch {
+            errorMessageLabel.text = "Unable to save budget name and amount is required"
         }
     }
     private func setupUI() {
