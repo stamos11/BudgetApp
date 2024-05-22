@@ -12,6 +12,7 @@ import CoreData
 class AddBudgetCategoryViewController: UIViewController {
     
     private var persistentContainer: NSPersistentContainer
+    
     private var isFormValid: Bool {
         guard let name = nameTextField.text, let amount = amountTextField.text else {
             return false
@@ -116,3 +117,5 @@ class AddBudgetCategoryViewController: UIViewController {
         stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 }
+
+
