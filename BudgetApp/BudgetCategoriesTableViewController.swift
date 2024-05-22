@@ -61,8 +61,15 @@ class BudgetCategoriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (fetchedResultController.fetchedObjects ?? []).count
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let budgetCategory = fetchedResultController.object(at: indexPath)
+        
+        self.navigationController?.pushViewController(BudgetDetailsViewController(budgetCategory: budgetCategory, persistentContainer: persistentContainer), animated: true)
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetTableViewCell", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        
         let budgetCategory = fetchedResultController.object(at: indexPath)
         var configuration = cell.defaultContentConfiguration()
         configuration.text = budgetCategory.name
