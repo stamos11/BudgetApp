@@ -51,6 +51,7 @@ class BudgetDetailsViewController: UIViewController {
         let button = UIButton(configuration: config)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Save transaction", for: .normal)
+        button.addTarget(self, action: #selector(saveTransactionButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -84,6 +85,36 @@ class BudgetDetailsViewController: UIViewController {
         setupUI()
     }
     
+    private var isFormValid: Bool {
+        guard let name = nameTextField.text, let amount = amountTextField.text else {
+            return false
+        }
+        return !name.isEmpty && !amount.isEmpty && amount.isNumeric && amount.isGreaterThan(0)
+    }
+    private func saveTransaction() {
+        guard let name = nameTextField.text, let amount = amountTextField.text else {
+            return
+        }
+        let transaction = Transaction(context: persistentContainer.viewContext)
+        transaction.name = name
+        transaction.amount = Double(amount) ?? 0.0
+        transaction.category = budgetCategory
+        transaction.dateCreated = Date()
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            errorMessageLabel.text = "Unable to save transaction."
+        }
+    }
+    @objc func saveTransactionButtonTapped(_ sender: UIButton) {
+        
+        if isFormValid{
+            saveTransaction()
+        } else {
+            errorMessageLabel.text = "Make sure name and amount is valid."
+        }
+    }
     private func setupUI() {
         view.backgroundColor = .gray
         navigationController?.navigationBar.prefersLargeTitles = true
