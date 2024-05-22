@@ -70,6 +70,26 @@ class BudgetDetailsViewController: UIViewController {
         label.text = budgetCategory.amount.formatAsCurrency()
         return label
     }()
+    lazy var transactionsTotalLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        return label
+    }()
+    
+    var transactionTotal: Double {
+        let transactions = fetchedResultsController.fetchedObjects ?? []
+        return transactions.reduce(0) { next, transaction in
+            next + transaction.amount
+        }
+    }
+    private func resetForm() {
+        nameTextField.text = ""
+        amountTextField.text = ""
+        errorMessageLabel.text = ""
+    }
+    private func updateTransactionTotal() {
+        transactionsTotalLabel.text = transactionTotal.formatAsCurrency()
+    }
     
     init(budgetCategory: BudgetCategory, persistentContainer: NSPersistentContainer) {
         self.persistentContainer = persistentContainer
@@ -97,6 +117,7 @@ class BudgetDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        updateTransactionTotal()
     }
     
     private var isFormValid: Bool {
@@ -117,6 +138,8 @@ class BudgetDetailsViewController: UIViewController {
         
         do {
             try persistentContainer.viewContext.save()
+            resetForm()
+            tableView.reloadData()
         } catch {
             errorMessageLabel.text = "Unable to save transaction."
         }
@@ -146,6 +169,7 @@ class BudgetDetailsViewController: UIViewController {
         stackView.addArrangedSubview(amountTextField)
         stackView.addArrangedSubview(saveTransactionButton)
         stackView.addArrangedSubview(errorMessageLabel)
+        stackView.addArrangedSubview(transactionsTotalLabel)
         stackView.addArrangedSubview(tableView)
         
         view.addSubview(stackView)
@@ -185,6 +209,7 @@ extension BudgetDetailsViewController: UITableViewDataSource {
 
 extension BudgetDetailsViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
+        updateTransactionTotal()
         tableView.reloadData()
     }
 }
