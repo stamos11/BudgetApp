@@ -76,7 +76,7 @@ class BudgetDetailsViewController: UIViewController {
         return label
     }()
     
-    var transactionTotal: Double {
+     var transactionTotal: Double {
         let transactions = fetchedResultsController.fetchedObjects ?? []
         return transactions.reduce(0) { next, transaction in
             next + transaction.amount

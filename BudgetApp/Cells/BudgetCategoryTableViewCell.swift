@@ -43,9 +43,7 @@ class BudgetTableViewCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isBaselineRelativeArrangement = true
-        nameLabel.text = "Food"
-        amountLabel.text = "$250"
-        remainingLabel.text = "Remaining: $50"
+      
         
         stackView.addArrangedSubview(nameLabel)
         
@@ -63,6 +61,11 @@ class BudgetTableViewCell: UITableViewCell {
         stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         stackView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+    }
+    func configure(_ budgetCategory: BudgetCategory) {
+        nameLabel.text = budgetCategory.name
+        amountLabel.text = budgetCategory.amount.formatAsCurrency()
+        remainingLabel.text = "Remaining: $50"
     }
     
 }
