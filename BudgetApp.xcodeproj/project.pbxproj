@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EC8D5A62BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8D5A52BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift */; };
 		3ECFF9112BFE7A7700B64FDD /* BudgetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFF9102BFE7A7700B64FDD /* BudgetDetailsViewController.swift */; };
 		3ECFF9132BFE858A00B64FDD /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFF9122BFE858A00B64FDD /* Double+Extensions.swift */; };
 		3EF7B21A2BFAB37200F1466C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7B2192BFAB37200F1466C /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EC8D5A52BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		3ECFF9102BFE7A7700B64FDD /* BudgetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsViewController.swift; sourceTree = "<group>"; };
 		3ECFF9122BFE858A00B64FDD /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		3EF7B2162BFAB37200F1466C /* BudgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3EC8D5A42BFFB71300C2B8D0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3EC8D5A52BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3EF7B20D2BFAB37200F1466C = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		3EF7B2182BFAB37200F1466C /* BudgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				3EC8D5A42BFFB71300C2B8D0 /* Cells */,
 				3EF7B2352BFAC6EC00F1466C /* Extensions */,
 				3EF7B2192BFAB37200F1466C /* AppDelegate.swift */,
 				3EF7B21B2BFAB37200F1466C /* SceneDelegate.swift */,
@@ -161,6 +172,7 @@
 				3ECFF9112BFE7A7700B64FDD /* BudgetDetailsViewController.swift in Sources */,
 				3EF7B2372BFAC70200F1466C /* String+Extensions.swift in Sources */,
 				3EF7B21C2BFAB37200F1466C /* SceneDelegate.swift in Sources */,
+				3EC8D5A62BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
