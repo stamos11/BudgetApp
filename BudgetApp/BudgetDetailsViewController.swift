@@ -76,19 +76,14 @@ class BudgetDetailsViewController: UIViewController {
         return label
     }()
     
-     var transactionTotal: Double {
-        let transactions = fetchedResultsController.fetchedObjects ?? []
-        return transactions.reduce(0) { next, transaction in
-            next + transaction.amount
-        }
-    }
+  
     private func resetForm() {
         nameTextField.text = ""
         amountTextField.text = ""
         errorMessageLabel.text = ""
     }
     private func updateTransactionTotal() {
-        transactionsTotalLabel.text = transactionTotal.formatAsCurrency()
+        transactionsTotalLabel.text = budgetCategory.transactionTotal.formatAsCurrency()
     }
     
     init(budgetCategory: BudgetCategory, persistentContainer: NSPersistentContainer) {

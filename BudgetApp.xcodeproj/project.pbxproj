@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3EC8D5A62BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8D5A52BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift */; };
+		3EC8D5A92BFFCE2D00C2B8D0 /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8D5A82BFFCE2D00C2B8D0 /* BudgetCategory+CoreDataClass.swift */; };
+		3EC8D5AB2BFFCF7600C2B8D0 /* NSSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC8D5AA2BFFCF7600C2B8D0 /* NSSet+Extensions.swift */; };
 		3ECFF9112BFE7A7700B64FDD /* BudgetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFF9102BFE7A7700B64FDD /* BudgetDetailsViewController.swift */; };
 		3ECFF9132BFE858A00B64FDD /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECFF9122BFE858A00B64FDD /* Double+Extensions.swift */; };
 		3EF7B21A2BFAB37200F1466C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7B2192BFAB37200F1466C /* AppDelegate.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		3EC8D5A52BFFB72900C2B8D0 /* BudgetCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		3EC8D5A82BFFCE2D00C2B8D0 /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3EC8D5AA2BFFCF7600C2B8D0 /* NSSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Extensions.swift"; sourceTree = "<group>"; };
 		3ECFF9102BFE7A7700B64FDD /* BudgetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailsViewController.swift; sourceTree = "<group>"; };
 		3ECFF9122BFE858A00B64FDD /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		3EF7B2162BFAB37200F1466C /* BudgetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		3EC8D5A72BFFCE1600C2B8D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3EC8D5A82BFFCE2D00C2B8D0 /* BudgetCategory+CoreDataClass.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3EF7B20D2BFAB37200F1466C = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 		3EF7B2182BFAB37200F1466C /* BudgetApp */ = {
 			isa = PBXGroup;
 			children = (
+				3EC8D5A72BFFCE1600C2B8D0 /* Models */,
 				3EC8D5A42BFFB71300C2B8D0 /* Cells */,
 				3EF7B2352BFAC6EC00F1466C /* Extensions */,
 				3EF7B2192BFAB37200F1466C /* AppDelegate.swift */,
@@ -91,6 +104,7 @@
 			children = (
 				3EF7B2362BFAC70200F1466C /* String+Extensions.swift */,
 				3ECFF9122BFE858A00B64FDD /* Double+Extensions.swift */,
+				3EC8D5AA2BFFCF7600C2B8D0 /* NSSet+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -164,10 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC8D5AB2BFFCF7600C2B8D0 /* NSSet+Extensions.swift in Sources */,
 				3ECFF9132BFE858A00B64FDD /* Double+Extensions.swift in Sources */,
 				3EF7B22F2BFAB98200F1466C /* BudgetModel.xcdatamodeld in Sources */,
 				3EF7B21E2BFAB37200F1466C /* BudgetCategoriesTableViewController.swift in Sources */,
 				3EF7B21A2BFAB37200F1466C /* AppDelegate.swift in Sources */,
+				3EC8D5A92BFFCE2D00C2B8D0 /* BudgetCategory+CoreDataClass.swift in Sources */,
 				3EF7B2342BFABE3000F1466C /* AddBudgetCategoryViewController.swift in Sources */,
 				3ECFF9112BFE7A7700B64FDD /* BudgetDetailsViewController.swift in Sources */,
 				3EF7B2372BFAC70200F1466C /* String+Extensions.swift in Sources */,
