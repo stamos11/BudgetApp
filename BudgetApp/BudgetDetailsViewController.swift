@@ -126,6 +126,15 @@ class BudgetDetailsViewController: UIViewController {
         }
         return !name.isEmpty && !amount.isEmpty && amount.isNumeric && amount.isGreaterThan(0)
     }
+    private func deleteTransaction(_ transaction: Transaction) {
+        
+        persistentContainer.viewContext.delete(transaction)
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            errorMessageLabel.text = "Unable to delete transaction."
+        }
+    }
     private func saveTransaction() {
         guard let name = nameTextField.text, let amount = amountTextField.text else {
             return
@@ -208,6 +217,7 @@ extension BudgetDetailsViewController: UITableViewDataSource {
 }
 
 extension BudgetDetailsViewController: NSFetchedResultsControllerDelegate {
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<any NSFetchRequestResult>) {
         updateTransactionTotal()
         tableView.reloadData()
@@ -216,6 +226,12 @@ extension BudgetDetailsViewController: NSFetchedResultsControllerDelegate {
 
 extension BudgetDetailsViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let transaction = fetchedResultsController.object(at: indexPath)
+            deleteTransaction(transaction)
+        }
+    }
 }
 
 
